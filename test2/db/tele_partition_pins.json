@@ -1,0 +1,129 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "rx_busy",
+					"strict" : false
+				},
+				{
+					"name" : "rx_error",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_led_0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tx_busy",
+					"strict" : false
+				},
+				{
+					"name" : "tx",
+					"strict" : false
+				},
+				{
+					"name" : "rx",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "tx_ena",
+					"strict" : false
+				},
+				{
+					"name" : "tx_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tx_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "tx_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "tx_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "tx_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "tx_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "tx_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "tx_data[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
