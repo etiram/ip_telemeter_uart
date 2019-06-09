@@ -1,16 +1,16 @@
-Analysis & Synthesis Status : Successful - Thu Jun 06 16:12:06 2019
+Analysis & Synthesis Status : Failed - Fri Jun 07 19:20:00 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : tele
 Top-level Entity Name : tele
 Family : MAX 10
-Total logic elements : 107
-    Total combinational functions : 89
-    Dedicated logic registers : 69
-Total registers : 69
-Total pins : 30
-Total virtual pins : 0
-Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
-UFM blocks : 0
-ADC blocks : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge
+UFM blocks : N/A until Partition Merge
+ADC blocks : N/A until Partition Merge

@@ -7,24 +7,36 @@ entity tele is
 		reset_n	:	IN		STD_LOGIC;										--ascynchronous reset
 		tx_ena	:	IN		STD_LOGIC;										--initiate transmission
 		tx_data	:	IN		STD_LOGIC_VECTOR(7 DOWNTO 0);  --data to transmit
-		rx			:	IN		STD_LOGIC;										--receive pin
+		rx			:	IN		STD_LOGIC;			--receive pin
+		echo		: 	IN 	STD_LOGIC;
 		rx_busy	:	OUT	STD_LOGIC;										--data reception in progress
 		rx_error	:	OUT	STD_LOGIC;										--start, parity, or stop bit error detected
 		rx_led_1	:	OUT	STD_LOGIC_VECTOR(0 to 6);	--data received
 		rx_led_0	:	OUT	STD_LOGIC_VECTOR(0 to 6);	--data received
-		tx_busy	:	OUT	STD_LOGIC;  									--transmission in progress
+		tx_busy	:	OUT	STD_LOGIC; 		--transmission in progress
+		trigger 	: 	OUT		STD_LOGIC;
 		tx			:	OUT	STD_LOGIC);
 end entity tele;
 
 architecture behaviour of tele is
+	signal tele_data : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	signal rx_data : STD_LOGIC_VECTOR(7 DOWNTO 0);
 begin
+	
+	tele_instance : entity work.telemeter PORT MAP(
+		clk => clk,
+		start => reset_n,
+		busy => tx_busy,
+		trigger => trigger,
+		echo => echo,
+		data => tele_data
+	);
 	
 	uart_instance : entity work.uart PORT MAP (
       clk => clk,
 		reset_n => reset_n,
 		tx_ena => tx_ena,
-		tx_data => tx_data,
+		tx_data => tele_data,
 		rx => rx,
 		rx_busy => rx_busy,
 		rx_error => rx_error,

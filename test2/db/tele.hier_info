@@ -11,24 +11,24 @@ tx_data[5] => uart:uart_instance.tx_data[5]
 tx_data[6] => uart:uart_instance.tx_data[6]
 tx_data[7] => uart:uart_instance.tx_data[7]
 rx => uart:uart_instance.rx
-rx_busy <= uart:uart_instance.rx_busy
-rx_error <= uart:uart_instance.rx_error
-rx_led_1[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_1[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_1[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_1[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_1[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_1[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_1[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_0[6] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_0[5] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_0[4] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_0[3] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_0[2] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_0[1] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
-rx_led_0[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
-tx_busy <= uart:uart_instance.tx_busy
-tx <= uart:uart_instance.tx
+rx_busy << uart:uart_instance.rx_busy
+rx_error << uart:uart_instance.rx_error
+rx_led_1[6] << Mux6.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_1[5] << Mux5.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_1[4] << Mux4.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_1[3] << Mux3.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_1[2] << Mux2.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_1[1] << Mux1.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_1[0] << Mux0.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_0[6] << Mux13.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_0[5] << Mux12.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_0[4] << Mux11.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_0[3] << Mux10.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_0[2] << Mux9.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_0[1] << Mux8.DB_MAX_OUTPUT_PORT_TYPE
+rx_led_0[0] << Mux7.DB_MAX_OUTPUT_PORT_TYPE
+tx_busy << uart:uart_instance.tx_busy
+tx << uart:uart_instance.tx
 
 
 |tele|uart:uart_instance

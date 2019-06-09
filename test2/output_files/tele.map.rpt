@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tele
-Thu Jun 06 16:12:06 2019
+Fri Jun 07 19:20:00 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,16 +10,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: uart:uart_instance
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -45,22 +36,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 06 16:12:06 2019       ;
+; Analysis & Synthesis Status        ; Failed - Fri Jun 07 19:20:00 2019           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; tele                                        ;
 ; Top-level Entity Name              ; tele                                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 107                                         ;
-;     Total combinational functions  ; 89                                          ;
-;     Dedicated logic registers      ; 69                                          ;
-; Total registers                    ; 69                                          ;
-; Total pins                         ; 30                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
+; UFM blocks                         ; N/A until Partition Merge                   ;
+; ADC blocks                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -163,165 +154,11 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                               ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                        ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; tele.vhd                         ; yes             ; User VHDL File  ; C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/tele.vhd ;         ;
-; uart.vhd                         ; yes             ; User VHDL File  ; C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/uart.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 107       ;
-;                                             ;           ;
-; Total combinational functions               ; 89        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 40        ;
-;     -- 3 input functions                    ; 25        ;
-;     -- <=2 input functions                  ; 24        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 69        ;
-;     -- arithmetic mode                      ; 20        ;
-;                                             ;           ;
-; Total registers                             ; 69        ;
-;     -- Dedicated logic registers            ; 69        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 30        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 69        ;
-; Total fan-out                               ; 577       ;
-; Average fan-out                             ; 2.65      ;
-+---------------------------------------------+-----------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name      ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
-; |tele                      ; 89 (15)             ; 69 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 30   ; 0            ; 0          ; |tele                    ; tele        ; work         ;
-;    |uart:uart_instance|    ; 74 (74)             ; 69 (69)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |tele|uart:uart_instance ; uart        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 69    ;
-; Number of registers using Synchronous Clear  ; 22    ;
-; Number of registers using Synchronous Load   ; 1     ;
-; Number of registers using Asynchronous Clear ; 50    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 37    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; uart:uart_instance|tx_busy              ; 2       ;
-; uart:uart_instance|tx                   ; 1       ;
-; uart:uart_instance|tx_buffer[0]         ; 1       ;
-; uart:uart_instance|tx_buffer[1]         ; 1       ;
-; uart:uart_instance|tx_buffer[2]         ; 1       ;
-; uart:uart_instance|tx_buffer[3]         ; 1       ;
-; uart:uart_instance|tx_buffer[4]         ; 1       ;
-; uart:uart_instance|tx_buffer[5]         ; 1       ;
-; uart:uart_instance|tx_buffer[6]         ; 1       ;
-; uart:uart_instance|tx_buffer[7]         ; 1       ;
-; uart:uart_instance|tx_buffer[8]         ; 1       ;
-; uart:uart_instance|tx_buffer[9]         ; 1       ;
-; Total number of inverted registers = 12 ;         ;
-+-----------------------------------------+---------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tele|uart:uart_instance|rx_count[0]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tele|uart:uart_instance|tx_count[3]  ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |tele|uart:uart_instance|os_count[3]  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |tele|uart:uart_instance|tx_buffer[0] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |tele|uart:uart_instance|tx_buffer[2] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-
-
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: uart:uart_instance ;
-+----------------+----------+-------------------------------------+
-; Parameter Name ; Value    ; Type                                ;
-+----------------+----------+-------------------------------------+
-; clk_freq       ; 50000000 ; Signed Integer                      ;
-; baud_rate      ; 9600     ; Signed Integer                      ;
-; os_rate        ; 16       ; Signed Integer                      ;
-; d_width        ; 8        ; Signed Integer                      ;
-; parity         ; 0        ; Signed Integer                      ;
-; parity_eo      ; '0'      ; Enumerated                          ;
-+----------------+----------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 30                          ;
-; cycloneiii_ff         ; 69                          ;
-;     CLR               ; 9                           ;
-;     CLR SCLR          ; 22                          ;
-;     CLR SLD           ; 1                           ;
-;     ENA               ; 19                          ;
-;     ENA CLR           ; 18                          ;
-; cycloneiii_lcell_comb ; 93                          ;
-;     arith             ; 20                          ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 8                           ;
-;     normal            ; 73                          ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 17                          ;
-;         4 data inputs ; 40                          ;
-;                       ;                             ;
-; Max LUT depth         ; 5.80                        ;
-; Average LUT depth     ; 2.38                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -330,38 +167,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Jun 06 16:11:56 2019
+    Info: Processing started: Fri Jun 07 19:19:50 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tele -c tele
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file tele.vhd
-    Info (12022): Found design unit 1: tele-behaviour File: C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/tele.vhd Line: 19
-    Info (12023): Found entity 1: tele File: C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/tele.vhd Line: 4
+    Info (12022): Found design unit 1: tele-behaviour File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/tele.vhd Line: 21
+    Info (12023): Found entity 1: tele File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/tele.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file uart.vhd
-    Info (12022): Found design unit 1: uart-logic File: C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/uart.vhd Line: 47
-    Info (12023): Found entity 1: uart File: C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/uart.vhd Line: 26
+    Info (12022): Found design unit 1: uart-logic File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/uart.vhd Line: 47
+    Info (12023): Found entity 1: uart File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/uart.vhd Line: 26
+Info (12021): Found 2 design units, including 1 entities, in source file telemeter.vhd
+    Info (12022): Found design unit 1: telemeter-main File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/telemeter.vhd Line: 15
+    Info (12023): Found entity 1: telemeter File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/telemeter.vhd Line: 5
 Warning (12162): EDA synthesis tool is specified as "Custom", but Library Mapping File is not specified
 Warning (12163): EDA synthesis tool is specified as "Custom", but VCC is not specified
 Warning (12164): EDA synthesis tool is specified as "Custom", but GND is not specified
 Info (12127): Elaborating entity "tele" for the top level hierarchy
-Info (12128): Elaborating entity "uart" for hierarchy "uart:uart_instance" File: C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/tele.vhd Line: 23
-Warning (10492): VHDL Process Statement warning at uart.vhd(104): signal "os_pulse" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/uart.vhd Line: 104
-Warning (12162): EDA synthesis tool is specified as "Custom", but Library Mapping File is not specified
-Warning (12163): EDA synthesis tool is specified as "Custom", but VCC is not specified
-Warning (12164): EDA synthesis tool is specified as "Custom", but GND is not specified
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/uart.vhd Line: 43
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 138 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 18 output pins
-    Info (21061): Implemented 108 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4806 megabytes
-    Info: Processing ended: Thu Jun 06 16:12:07 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+Info (12128): Elaborating entity "telemeter" for hierarchy "telemeter:tele_instance" File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/tele.vhd Line: 26
+Error (10533): VHDL Wait Statement error at telemeter.vhd(28): Wait Statement must contain condition clause with UNTIL keyword File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Error (10442): VHDL Process Statement error at telemeter.vhd(35): Process Statement must contain either a sensitivity list or a Wait Statement File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/telemeter.vhd Line: 35
+Error (12152): Can't elaborate user hierarchy "telemeter:tele_instance" File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/tele.vhd Line: 26
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 4 warnings
+    Error: Peak virtual memory: 4797 megabytes
+    Error: Processing ended: Fri Jun 07 19:20:00 2019
+    Error: Elapsed time: 00:00:10
+    Error: Total CPU time (on all processors): 00:00:22
 
 

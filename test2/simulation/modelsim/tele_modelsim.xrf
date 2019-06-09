@@ -1,11 +1,11 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/tele.vhd
-source_file = 1, C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/uart.vhd
+source_file = 1, C:/Users/Marius/Documents/ip_telemeter_uart/test2/tele.vhd
+source_file = 1, C:/Users/Marius/Documents/ip_telemeter_uart/test2/uart.vhd
 source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/timing_b.vhd
 source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/timing_p.vhd
-source_file = 1, C:/Users/Thibault/workspace/gistre/ip_telemeter_uart/test2/db/tele.cbx.xml
+source_file = 1, C:/Users/Marius/Documents/ip_telemeter_uart/test2/db/tele.cbx.xml
 design_name = tele
 instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, tele, 1
 instance = comp, \rx_busy~output , rx_busy~output, tele, 1
