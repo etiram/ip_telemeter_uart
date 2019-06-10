@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tele
-Fri Jun 07 19:20:00 2019
+Tue Jun 11 01:36:37 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,23 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Counter:counter_inst
+ 15. Parameter Settings for User Entity Instance: telemeter:tele_instance|Counter:counter_inst
+ 16. Parameter Settings for User Entity Instance: uart:uart_instance
+ 17. Parameter Settings for Inferred Entity Instance: telemeter:tele_instance|lpm_divide:Div0
+ 18. Port Connectivity Checks: "Counter:counter_inst"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -36,22 +52,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Jun 07 19:20:00 2019           ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 11 01:36:37 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; tele                                        ;
 ; Top-level Entity Name              ; tele                                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 717                                         ;
+;     Total combinational functions  ; 707                                         ;
+;     Dedicated logic registers      ; 66                                          ;
+; Total registers                    ; 66                                          ;
+; Total pins                         ; 23                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -150,15 +166,279 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; tele.vhd                         ; yes             ; User VHDL File               ; C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd                   ;         ;
+; uart.vhd                         ; yes             ; User VHDL File               ; C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/uart.vhd                   ;         ;
+; telemeter.vhd                    ; yes             ; User VHDL File               ; C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd              ;         ;
+; counter.vhd                      ; yes             ; User VHDL File               ; C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/counter.vhd                ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf              ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc             ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc         ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc              ;         ;
+; db/lpm_divide_cvl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/lpm_divide_cvl.tdf      ;         ;
+; db/sign_div_unsign_enh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/sign_div_unsign_enh.tdf ;         ;
+; db/alt_u_div_6le.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/alt_u_div_6le.tdf       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/add_sub_t3c.tdf         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/add_sub_u3c.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 717       ;
+;                                             ;           ;
+; Total combinational functions               ; 707       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 200       ;
+;     -- 3 input functions                    ; 217       ;
+;     -- <=2 input functions                  ; 290       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 476       ;
+;     -- arithmetic mode                      ; 231       ;
+;                                             ;           ;
+; Total registers                             ; 66        ;
+;     -- Dedicated logic registers            ; 66        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 23        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 66        ;
+; Total fan-out                               ; 2266      ;
+; Average fan-out                             ; 2.76      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                 ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                           ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |tele                                     ; 707 (14)            ; 66 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 23   ; 0            ; 0          ; |tele                                                                                                                         ; tele                ; work         ;
+;    |telemeter:tele_instance|              ; 640 (57)            ; 22 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |tele|telemeter:tele_instance                                                                                                 ; telemeter           ; work         ;
+;       |Counter:counter_inst|              ; 22 (22)             ; 22 (22)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |tele|telemeter:tele_instance|Counter:counter_inst                                                                            ; Counter             ; work         ;
+;       |lpm_divide:Div0|                   ; 561 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |tele|telemeter:tele_instance|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_cvl:auto_generated|  ; 561 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |tele|telemeter:tele_instance|lpm_divide:Div0|lpm_divide_cvl:auto_generated                                                   ; lpm_divide_cvl      ; work         ;
+;             |sign_div_unsign_enh:divider| ; 561 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |tele|telemeter:tele_instance|lpm_divide:Div0|lpm_divide_cvl:auto_generated|sign_div_unsign_enh:divider                       ; sign_div_unsign_enh ; work         ;
+;                |alt_u_div_6le:divider|    ; 561 (561)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |tele|telemeter:tele_instance|lpm_divide:Div0|lpm_divide_cvl:auto_generated|sign_div_unsign_enh:divider|alt_u_div_6le:divider ; alt_u_div_6le       ; work         ;
+;    |uart:uart_instance|                   ; 53 (53)             ; 44 (44)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |tele|uart:uart_instance                                                                                                      ; uart                ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                      ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                       ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; telemeter:tele_instance|data[4]                     ; telemeter:tele_instance|data[15]          ; yes                    ;
+; telemeter:tele_instance|data[5]                     ; telemeter:tele_instance|data[15]          ; yes                    ;
+; telemeter:tele_instance|data[6]                     ; telemeter:tele_instance|data[15]          ; yes                    ;
+; telemeter:tele_instance|data[7]                     ; telemeter:tele_instance|data[15]          ; yes                    ;
+; telemeter:tele_instance|data[0]                     ; telemeter:tele_instance|data[15]          ; yes                    ;
+; telemeter:tele_instance|data[1]                     ; telemeter:tele_instance|data[15]          ; yes                    ;
+; telemeter:tele_instance|data[2]                     ; telemeter:tele_instance|data[15]          ; yes                    ;
+; telemeter:tele_instance|data[3]                     ; telemeter:tele_instance|data[15]          ; yes                    ;
+; telemeter:tele_instance|trigger                     ; telemeter:tele_instance|state.sending_501 ; yes                    ;
+; telemeter:tele_instance|state.receiving_475         ; telemeter:tele_instance|Selector1         ; yes                    ;
+; telemeter:tele_instance|state.sending_501           ; telemeter:tele_instance|Selector1         ; yes                    ;
+; telemeter:tele_instance|state.waiting_488           ; telemeter:tele_instance|Selector1         ; yes                    ;
+; telemeter:tele_instance|state.reset_462             ; telemeter:tele_instance|Selector1         ; yes                    ;
+; telemeter:tele_instance|rst_cnt                     ; telemeter:tele_instance|Selector7         ; yes                    ;
+; telemeter:tele_instance|state.idle_514              ; telemeter:tele_instance|Selector1         ; yes                    ;
+; Number of user-specified and inferred latches = 15  ;                                           ;                        ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; Counter:counter_inst|count[0..21]      ; Stuck at GND due to stuck port clear   ;
+; uart:uart_instance|rx_data[0..7]       ; Lost fanout                            ;
+; uart:uart_instance|tx_state            ; Stuck at GND due to stuck port data_in ;
+; uart:uart_instance|baud_pulse          ; Lost fanout                            ;
+; uart:uart_instance|tx_count[0..3]      ; Lost fanout                            ;
+; uart:uart_instance|tx_buffer[1..9]     ; Lost fanout                            ;
+; uart:uart_instance|tx_buffer[0]        ; Stuck at VCC due to stuck port data_in ;
+; uart:uart_instance|tx                  ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 47 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                  ;
++--------------------------------+---------------------------+-----------------------------------------------------------------+
+; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                          ;
++--------------------------------+---------------------------+-----------------------------------------------------------------+
+; Counter:counter_inst|count[21] ; Stuck at GND              ; uart:uart_instance|baud_pulse, uart:uart_instance|tx_buffer[0], ;
+;                                ; due to stuck port clear   ; uart:uart_instance|tx                                           ;
+; uart:uart_instance|tx_state    ; Stuck at GND              ; uart:uart_instance|tx_count[2], uart:uart_instance|tx_count[1]  ;
+;                                ; due to stuck port data_in ;                                                                 ;
++--------------------------------+---------------------------+-----------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 66    ;
+; Number of registers using Synchronous Clear  ; 22    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 57    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; uart:uart_instance|tx_busy             ; 1       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tele|uart:uart_instance|rx_count[2] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |tele|uart:uart_instance|os_count[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Counter:counter_inst ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; n              ; 22    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: telemeter:tele_instance|Counter:counter_inst ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; n              ; 22    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart:uart_instance ;
++----------------+----------+-------------------------------------+
+; Parameter Name ; Value    ; Type                                ;
++----------------+----------+-------------------------------------+
+; clk_freq       ; 50000000 ; Signed Integer                      ;
+; baud_rate      ; 9600     ; Signed Integer                      ;
+; os_rate        ; 16       ; Signed Integer                      ;
+; d_width        ; 8        ; Signed Integer                      ;
+; parity         ; 0        ; Signed Integer                      ;
+; parity_eo      ; '0'      ; Enumerated                          ;
++----------------+----------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: telemeter:tele_instance|lpm_divide:Div0 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 44             ; Untyped                                        ;
+; LPM_WIDTHD             ; 16             ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_cvl ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "Counter:counter_inst" ;
++-------+-------+----------+-----------------------+
+; Port  ; Type  ; Severity ; Details               ;
++-------+-------+----------+-----------------------+
+; reset ; Input ; Info     ; Stuck at GND          ;
++-------+-------+----------+-----------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 23                          ;
+; cycloneiii_ff         ; 66                          ;
+;     CLR               ; 30                          ;
+;     CLR SCLR          ; 22                          ;
+;     ENA               ; 9                           ;
+;     ENA CLR           ; 5                           ;
+; cycloneiii_lcell_comb ; 713                         ;
+;     arith             ; 231                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 47                          ;
+;         3 data inputs ; 183                         ;
+;     normal            ; 482                         ;
+;         0 data inputs ; 15                          ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 225                         ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 200                         ;
+;                       ;                             ;
+; Max LUT depth         ; 45.00                       ;
+; Average LUT depth     ; 34.68                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -167,31 +447,136 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Jun 07 19:19:50 2019
+    Info: Processing started: Tue Jun 11 01:36:15 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tele -c tele
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file tele.vhd
-    Info (12022): Found design unit 1: tele-behaviour File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/tele.vhd Line: 21
-    Info (12023): Found entity 1: tele File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/tele.vhd Line: 4
+    Info (12022): Found design unit 1: tele-behaviour File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 23
+    Info (12023): Found entity 1: tele File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file uart.vhd
-    Info (12022): Found design unit 1: uart-logic File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/uart.vhd Line: 47
-    Info (12023): Found entity 1: uart File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/uart.vhd Line: 26
+    Info (12022): Found design unit 1: uart-logic File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/uart.vhd Line: 47
+    Info (12023): Found entity 1: uart File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/uart.vhd Line: 26
 Info (12021): Found 2 design units, including 1 entities, in source file telemeter.vhd
-    Info (12022): Found design unit 1: telemeter-main File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/telemeter.vhd Line: 15
-    Info (12023): Found entity 1: telemeter File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/telemeter.vhd Line: 5
+    Info (12022): Found design unit 1: telemeter-main File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 15
+    Info (12023): Found entity 1: telemeter File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
+    Info (12022): Found design unit 1: Counter-Behavioral File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/counter.vhd Line: 12
+    Info (12023): Found entity 1: Counter File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/counter.vhd Line: 5
 Warning (12162): EDA synthesis tool is specified as "Custom", but Library Mapping File is not specified
 Warning (12163): EDA synthesis tool is specified as "Custom", but VCC is not specified
 Warning (12164): EDA synthesis tool is specified as "Custom", but GND is not specified
 Info (12127): Elaborating entity "tele" for the top level hierarchy
-Info (12128): Elaborating entity "telemeter" for hierarchy "telemeter:tele_instance" File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/tele.vhd Line: 26
-Error (10533): VHDL Wait Statement error at telemeter.vhd(28): Wait Statement must contain condition clause with UNTIL keyword File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/telemeter.vhd Line: 28
-Error (10442): VHDL Process Statement error at telemeter.vhd(35): Process Statement must contain either a sensitivity list or a Wait Statement File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/telemeter.vhd Line: 35
-Error (12152): Can't elaborate user hierarchy "telemeter:tele_instance" File: C:/Users/Marius/Documents/ip_telemeter_uart/test2/tele.vhd Line: 26
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 4 warnings
-    Error: Peak virtual memory: 4797 megabytes
-    Error: Processing ended: Fri Jun 07 19:20:00 2019
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:22
+Warning (10492): VHDL Process Statement warning at tele.vhd(69): signal "start_tele" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at tele.vhd(74): signal "cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at tele.vhd(75): signal "tele_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at tele.vhd(76): signal "cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at tele.vhd(77): signal "tele_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at tele.vhd(78): signal "cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at tele.vhd(87): signal "tele_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at tele.vhd(106): signal "tele_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 106
+Warning (10631): VHDL Process Statement warning at tele.vhd(64): inferring latch(es) for signal or variable "start_tele", which holds its previous value in one or more paths through the process File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at tele.vhd(64): inferring latch(es) for signal or variable "tele_state", which holds its previous value in one or more paths through the process File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at tele.vhd(64): inferring latch(es) for signal or variable "rst_cnt", which holds its previous value in one or more paths through the process File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at tele.vhd(64): inferring latch(es) for signal or variable "tx_ena", which holds its previous value in one or more paths through the process File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at tele.vhd(64): inferring latch(es) for signal or variable "tx_data", which holds its previous value in one or more paths through the process File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "tx_data[0]" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "tx_data[1]" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "tx_data[2]" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "tx_data[3]" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "tx_data[4]" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "tx_data[5]" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "tx_data[6]" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "tx_data[7]" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "tx_ena" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "rst_cnt" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "tele_state" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (10041): Inferred latch for "start_tele" at tele.vhd(64) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 64
+Info (12128): Elaborating entity "Counter" for hierarchy "Counter:counter_inst" File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 36
+Info (12128): Elaborating entity "telemeter" for hierarchy "telemeter:tele_instance" File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 43
+Warning (10631): VHDL Process Statement warning at telemeter.vhd(28): inferring latch(es) for signal or variable "busy", which holds its previous value in one or more paths through the process File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at telemeter.vhd(28): inferring latch(es) for signal or variable "state", which holds its previous value in one or more paths through the process File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at telemeter.vhd(28): inferring latch(es) for signal or variable "rst_cnt", which holds its previous value in one or more paths through the process File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at telemeter.vhd(28): inferring latch(es) for signal or variable "trigger", which holds its previous value in one or more paths through the process File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at telemeter.vhd(28): inferring latch(es) for signal or variable "data", which holds its previous value in one or more paths through the process File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[0]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[1]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[2]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[3]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[4]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[5]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[6]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[7]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[8]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[9]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[10]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[11]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[12]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[13]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[14]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "data[15]" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "trigger" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "rst_cnt" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "state.reset" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "state.receiving" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "state.waiting" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "state.sending" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "state.idle" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (10041): Inferred latch for "busy" at telemeter.vhd(28) File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (12128): Elaborating entity "uart" for hierarchy "uart:uart_instance" File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 52
+Warning (10492): VHDL Process Statement warning at uart.vhd(104): signal "os_pulse" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/uart.vhd Line: 104
+Warning (14025): LATCH primitive "tele_state" is permanently disabled File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 29
+Warning (14025): LATCH primitive "tele_state" is permanently disabled File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 29
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "telemeter:tele_instance|Div0" File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 52
+Info (12130): Elaborated megafunction instantiation "telemeter:tele_instance|lpm_divide:Div0" File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 52
+Info (12133): Instantiated megafunction "telemeter:tele_instance|lpm_divide:Div0" with the following parameter: File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 52
+    Info (12134): Parameter "LPM_WIDTHN" = "44"
+    Info (12134): Parameter "LPM_WIDTHD" = "16"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_cvl.tdf
+    Info (12023): Found entity 1: lpm_divide_cvl File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/lpm_divide_cvl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_enh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_enh File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/sign_div_unsign_enh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6le.tdf
+    Info (12023): Found entity 1: alt_u_div_6le File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/alt_u_div_6le.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/add_sub_t3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/add_sub_u3c.tdf Line: 22
+Warning (12162): EDA synthesis tool is specified as "Custom", but Library Mapping File is not specified
+Warning (12163): EDA synthesis tool is specified as "Custom", but VCC is not specified
+Warning (12164): EDA synthesis tool is specified as "Custom", but GND is not specified
+Warning (13012): Latch telemeter:tele_instance|state.receiving_475 has unsafe behavior File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal telemeter:tele_instance|state.waiting_488 File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Warning (13012): Latch telemeter:tele_instance|state.waiting_488 has unsafe behavior File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal telemeter:tele_instance|state.sending_501 File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Warning (13012): Latch telemeter:tele_instance|state.reset_462 has unsafe behavior File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal telemeter:tele_instance|state.receiving_475 File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Warning (13012): Latch telemeter:tele_instance|rst_cnt has unsafe behavior File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 19
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal telemeter:tele_instance|state.sending_501 File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Warning (13012): Latch telemeter:tele_instance|state.idle_514 has unsafe behavior File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal telemeter:tele_instance|state.reset_462 File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/telemeter.vhd Line: 28
+Info (13000): Registers with preset signals will power-up high File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/uart.vhd Line: 43
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "tx" is stuck at VCC File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/tele.vhd Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 22 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "telemeter:tele_instance|lpm_divide:Div0|lpm_divide_cvl:auto_generated|sign_div_unsign_enh:divider|alt_u_div_6le:divider|add_sub_31_result_int[2]~28" File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/alt_u_div_6le.tdf Line: 151
+    Info (17048): Logic cell "telemeter:tele_instance|lpm_divide:Div0|lpm_divide_cvl:auto_generated|sign_div_unsign_enh:divider|alt_u_div_6le:divider|add_sub_31_result_int[1]~30" File: C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/db/alt_u_div_6le.tdf Line: 151
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 743 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 19 output pins
+    Info (21061): Implemented 720 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Tue Jun 11 01:36:37 2019
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:46
 
 

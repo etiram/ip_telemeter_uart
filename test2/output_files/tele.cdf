@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Users/Marius/Documents/ip_telemeter_uart/test2/output_files/") File("tele.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/tybol/Documents/gistre/ip_telemeter_uart/test2/output_files/") File("tele.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
