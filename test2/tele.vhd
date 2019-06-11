@@ -21,24 +21,22 @@ entity tele is
 end entity tele;
 
 architecture behaviour of tele is
-	type t_tele_state is(idle, running);
+	type t_tele_state is(idle, starting, running, feedback);
 	signal tele_data : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	signal rx_data : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	signal start_tele : std_logic := '0';
+	signal start_tele : std_logic;
 	signal tele_busy : std_logic;
-	signal tele_state : t_tele_state := idle;
 	signal cnt : std_logic_vector(21 downto 0);
 	signal rst_cnt : std_logic := '1';
-	signal tx_data : std_logic_vector(7 downto 0);
-	signal tx_ena : std_logic := '0';
+	signal tx_data : std_logic_vector(7	downto 0);
+	signal tx_ena : std_logic;
+	signal rst : std_logic;
+	signal rx_busy_cus : std_logic;
+	signal power_tele : std_logic;
+	signal data_1 : std_logic_vector(7 downto 0);
+	signal data_2 : std_logic_vector(7 downto 0);
+	signal data_3 : std_logic_vector(7 downto 0);
 begin
-
-	counter_inst : entity work.counter GENERIC MAP (
-		n => 22)
-	PORT MAP (
-		clk => clk,
-		reset => rst_cnt,
-		output => cnt);
 	
 	tele_instance : entity work.telemeter PORT MAP(
 		clk => clk,
@@ -55,36 +53,71 @@ begin
 		tx_ena => tx_ena,
 		tx_data => tx_data,
 		rx => rx,
-		rx_busy => rx_busy,
+		rx_busy => rx_busy_cus,
 		rx_error => rx_error,
 		rx_data => rx_data,
 		tx_busy => tx_busy,
 		tx => tx);
 		
-	process(rx_data, tele_state, tele_busy)	
+	process(tele_data)
+		variable convertion : integer;
+		variable lim1, lim2, lim3 : integer;
 	begin
-		if (rx_data = "01010001" and tele_state = idle) then
-			start_tele <= '1';
-			tele_state <= running;
-		elsif (tele_state = running and start_tele = '1') then
-			start_tele <= '0';
-		elsif (tele_state = running and tele_busy = '0') then
-			rst_cnt <= '0';
-			tx_ena <= '1';
-			if (unsigned(cnt) < 200) then
-				tx_data <= tele_data(15 downto 8);
-			elsif (unsigned(cnt) < 400) then
-				tx_data <= tele_data(7 downto 0);
-			elsif (unsigned(cnt) < 600) then
-				tx_data <= "00001010";
-			else
-				rst_cnt <= '0';
-				tx_ena <= '0';
-				tele_state <= idle;
-			end if;
+		convertion := to_integer(unsigned(tele_data));
+		lim1 := convertion / 100;
+		lim2 := (convertion / 10) mod 10;
+		lim3 := convertion mod 10;
+		if (convertion > 999) then
+			data_1 <= "01000110";
+			data_2 <= "01000110";
+			data_3 <= "01000110";
+		else
+			case lim1 is 
+				when 0 => data_1 <= "00110000";
+				when 1 => data_1 <= "00110001";
+				when 2 => data_1 <= "00110010";
+				when 3 => data_1 <= "00110011";
+				when 4 => data_1 <= "00110100";
+				when 5 => data_1 <= "00110101";
+				when 6 => data_1 <= "00110110";
+				when 7 => data_1 <= "00110111";
+				when 8 => data_1 <= "00111000";
+				when 9 => data_1 <= "00111001";
+				when others => data_1 <= "00110000";
+			end case;
+			case lim2 is 
+				when 0 => data_2 <= "00110000";
+				when 1 => data_2 <= "00110001";
+				when 2 => data_2 <= "00110010";
+				when 3 => data_2 <= "00110011";
+				when 4 => data_2 <= "00110100";
+				when 5 => data_2 <= "00110101";
+				when 6 => data_2 <= "00110110";
+				when 7 => data_2 <= "00110111";
+				when 8 => data_2 <= "00111000";
+				when 9 => data_2 <= "00111001";
+				when others => data_2 <= "00110000";
+			end case;
+			case lim3 is 
+				when 0 => data_3 <= "00110000";
+				when 1 => data_3 <= "00110001";
+				when 2 => data_3 <= "00110010";
+				when 3 => data_3 <= "00110011";
+				when 4 => data_3 <= "00110100";
+				when 5 => data_3 <= "00110101";
+				when 6 => data_3 <= "00110110";
+				when 7 => data_3 <= "00110111";
+				when 8 => data_3 <= "00111000";
+				when 9 => data_3 <= "00111001";
+				when others => data_3 <= "00110000";
+			end case;
 		end if;
+	end process;
 		
-		case tele_data(7 downto 4) is -- conf 1 / displaying uart in hexa on 7 segments displays
+	
+	process(rx_data)
+	begin
+		case rx_data(7 downto 4) is -- conf 1 / displaying uart in hexa on 7 segments displays
 			when "0000"=> rx_led_1 <="0000001";  -- '0'
 			when "0001"=> rx_led_1 <="1001111";  -- '1'
 			when "0010"=> rx_led_1 <="0010010";  -- '2'
@@ -103,7 +136,7 @@ begin
 			when "1111"=> rx_led_1 <="0111000";  -- 'F'
 			when others =>  NULL;
 		end case;
-		case tele_data(3 downto 0) is
+		case rx_data(3 downto 0) is
 			when "0000"=> rx_led_0 <="0000001";  -- '0'
 			when "0001"=> rx_led_0 <="1001111";  -- '1'
 			when "0010"=> rx_led_0 <="0010010";  -- '2'
@@ -123,4 +156,66 @@ begin
 			when others =>  NULL;
 		end case;
 	end process;
+	process(clk, rst)
+		type data_sent is(dat_1, dat_2, dat_3);
+		variable tele_curr_state: t_tele_state := idle;
+		variable counter: integer;
+		variable data_to_send:data_sent := dat_1;
+	begin
+		if (rst = '0' and tele_curr_state = idle) then
+			power_tele <= '0';
+			tx_ena <= '1';
+		elsif(clk'event and clk='1') then
+			if (rx_data(7 downto 0) = "01110110") then
+				case tele_curr_state is
+					when idle =>
+						power_tele <= '1';
+						counter := 0;
+						tx_ena <= '1';
+						tele_curr_state := starting;
+					when starting =>
+						counter := counter + 1;
+						if (counter > 200) then
+							power_tele <= '0';
+							counter := 0;
+							tele_curr_state := running;
+						end if;
+					when running =>
+						if (tele_busy = '0') then
+							counter := 0;
+							tele_curr_state := feedback;
+						end if;
+					when feedback =>
+						counter := counter + 1;
+						if (counter < 60000) then
+							tx_data <= data_1;
+						elsif (counter < 120000) then
+							tx_data <= data_2;
+						elsif (counter < 180000) then
+							tx_data <= data_3;
+						elsif (counter < 240000) then
+							tx_data <= "00001101";
+						elsif (counter < 300000) then
+							tx_data <= "00001010";
+						elsif (counter > 5000000) then
+							tele_curr_state := idle;
+						end if;
+						if ((counter mod 60000) < 50 and counter < 300000) then
+							tx_ena <= '0';
+						else
+							tx_ena <= '1';
+						end if;
+				end case;
+			else
+				power_tele <= '0';
+				tx_ena <= '1';
+			end if;
+		end if;
+		
+		
+	end process;
+	--rx_busy <= rst;
+	start_tele <= power_tele;
+	rx_busy <= rx_busy_cus;
+	rst <= rx_busy_cus;
 end behaviour;

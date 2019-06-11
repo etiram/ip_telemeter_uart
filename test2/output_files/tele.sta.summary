@@ -2,136 +2,64 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'echo'
-Slack : -47.939
-TNS   : -321.597
-
-Type  : Slow 1200mV 85C Model Setup 'telemeter:tele_instance|state.sending_501'
-Slack : -9.819
-TNS   : -46.740
-
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -2.788
-TNS   : -141.089
+Slack : -92.015
+TNS   : -2698.890
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.347
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'echo'
-Slack : 0.888
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'telemeter:tele_instance|state.sending_501'
-Slack : 3.177
+Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'clk'
-Slack : -3.959
-TNS   : -78.846
+Slack : -1.558
+TNS   : -3.817
 
 Type  : Slow 1200mV 85C Model Removal 'clk'
-Slack : 0.640
+Slack : 1.452
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -95.598
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'echo'
-Slack : -3.000
-TNS   : -3.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'telemeter:tele_instance|state.sending_501'
-Slack : 0.450
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'echo'
-Slack : -43.423
-TNS   : -291.022
-
-Type  : Slow 1200mV 0C Model Setup 'telemeter:tele_instance|state.sending_501'
-Slack : -9.296
-TNS   : -43.582
+TNS   : -238.704
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -2.461
-TNS   : -123.855
+Slack : -83.518
+TNS   : -2446.953
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.311
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'echo'
-Slack : 0.705
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'telemeter:tele_instance|state.sending_501'
-Slack : 3.032
+Slack : 0.306
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'clk'
-Slack : -3.623
-TNS   : -71.989
+Slack : -1.360
+TNS   : -3.233
 
 Type  : Slow 1200mV 0C Model Removal 'clk'
-Slack : 0.559
+Slack : 1.332
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -95.598
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'echo'
-Slack : -3.000
-TNS   : -3.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'telemeter:tele_instance|state.sending_501'
-Slack : 0.392
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'echo'
-Slack : -19.360
-TNS   : -132.394
-
-Type  : Fast 1200mV 0C Model Setup 'telemeter:tele_instance|state.sending_501'
-Slack : -4.362
-TNS   : -19.713
+TNS   : -238.704
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.613
-TNS   : -23.687
+Slack : -37.647
+TNS   : -1043.149
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.152
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'echo'
-Slack : 0.620
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'telemeter:tele_instance|state.sending_501'
-Slack : 1.632
+Slack : 0.147
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'clk'
-Slack : -1.668
-TNS   : -32.621
+Slack : -0.133
+TNS   : -0.142
 
 Type  : Fast 1200mV 0C Model Removal 'clk'
-Slack : 0.349
+Slack : 0.615
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -70.794
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'echo'
-Slack : -3.000
-TNS   : -3.039
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'telemeter:tele_instance|state.sending_501'
-Slack : 0.400
-TNS   : 0.000
+TNS   : -176.263
 
 ------------------------------------------------------------

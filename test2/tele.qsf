@@ -57,15 +57,6 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VHDL_FILE uart.vhd
 set_location_assignment PIN_P11 -to clk
 set_location_assignment PIN_B8 -to reset_n
-set_location_assignment PIN_A7 -to tx_ena
-set_location_assignment PIN_C10 -to tx_data[0]
-set_location_assignment PIN_C11 -to tx_data[1]
-set_location_assignment PIN_D12 -to tx_data[2]
-set_location_assignment PIN_C12 -to tx_data[3]
-set_location_assignment PIN_A12 -to tx_data[4]
-set_location_assignment PIN_B12 -to tx_data[5]
-set_location_assignment PIN_A13 -to tx_data[6]
-set_location_assignment PIN_A14 -to tx_data[7]
 set_location_assignment PIN_A11 -to rx_busy
 set_location_assignment PIN_B11 -to tx_busy
 set_location_assignment PIN_W5 -to tx

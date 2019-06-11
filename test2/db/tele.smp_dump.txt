@@ -1,0 +1,15 @@
+
+State Machine - |tele|tele_curr_state
+Name tele_curr_state.feedback tele_curr_state.running tele_curr_state.starting tele_curr_state.idle 
+tele_curr_state.idle 0 0 0 0 
+tele_curr_state.starting 0 0 1 1 
+tele_curr_state.running 0 1 0 1 
+tele_curr_state.feedback 1 0 0 1 
+
+State Machine - |tele|telemeter:tele_instance|curr_state
+Name curr_state.reset curr_state.receiving curr_state.waiting curr_state.sending curr_state.idle 
+curr_state.idle 0 0 0 0 0 
+curr_state.sending 0 0 0 1 1 
+curr_state.waiting 0 0 1 0 1 
+curr_state.receiving 0 1 0 0 1 
+curr_state.reset 1 0 0 0 1 

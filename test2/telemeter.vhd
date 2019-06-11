@@ -14,53 +14,48 @@ END telemeter;
 
 architecture main of telemeter IS
 	type tele_state is(idle, sending, waiting, receiving, reset);
-	signal state : tele_state := idle;
-	signal cnt : std_logic_vector(21 downto 0);
-	signal rst_cnt : std_logic := '1';
 	
 BEGIN
-	counter_inst : entity work.counter GENERIC MAP (
-		n => 22)
-	PORT MAP (
-		clk => clk,
-		reset => rst_cnt,
-		output => cnt);
-	process(start, echo, state, cnt)
-		variable curr_val : integer := 0;
+	process(clk)
+		variable curr_val : integer;
+		variable curr_state : tele_state := idle;
+		variable cnt : integer;
 	BEGIN
-		CASE state IS
-			WHEN idle =>
-				if (start = '1') then
+		if (start = '0' and curr_state = idle) then
+			busy <= '0';
+		elsif (clk'event and clk = '1') then
+			CASE curr_state IS
+				WHEN idle =>
+					cnt := 0;
+					curr_state := sending;
+				WHEN sending =>
 					busy <= '1';
-					state <= sending;
-					rst_cnt <= '0';
-				end if;
-			WHEN sending =>
-				trigger <= '1';
-				if (unsigned(cnt) > 525) then
-					trigger <= '0';
-					rst_cnt <= '1';
-					state <= waiting;
-				end if;
-			WHEN waiting =>
-				if (echo = '1') then
-					rst_cnt <= '0';
-					state <= receiving;
-				end if;
-			WHEN receiving =>
-				if (echo = '0') then
-					curr_val := to_integer((unsigned(cnt) * 34) / 50000);
-					data <= std_logic_vector(to_unsigned(curr_val, 16));
-					rst_cnt <= '1';
-					state <= reset;
-				end if;
-			WHEN reset =>
-				rst_cnt <= '0';
-				if (unsigned(cnt) >= 3000000) then
-					rst_cnt <= '1';
-					state <= idle;
-					busy <= '0';
-				end if;
-		END CASE;
+					trigger <= '1';
+					cnt := cnt + 1;
+					if (cnt > 525) then
+						trigger <= '0';
+						curr_state := waiting;
+					end if;
+				WHEN waiting =>
+					cnt := 0;
+					if (echo = '1') then
+						curr_state := receiving;
+					end if;
+				WHEN receiving =>
+					cnt := cnt + 1;
+					if (echo = '0') then
+						curr_val := (cnt * 34) / 100000;
+						data <= std_logic_vector(to_unsigned(curr_val, 16));
+						curr_state := reset;
+					end if;
+				WHEN reset =>
+					cnt := cnt + 1;
+					if (cnt >= 3000000) then
+						cnt := 0;
+						curr_state := idle;
+						busy <= '0';
+					end if;
+			END CASE;
+		end if;
 	END process;
 END main;

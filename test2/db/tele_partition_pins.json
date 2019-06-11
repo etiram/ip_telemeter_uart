@@ -76,6 +76,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "tx",
+					"strict" : false
+				},
+				{
 					"name" : "rx",
 					"strict" : false
 				},

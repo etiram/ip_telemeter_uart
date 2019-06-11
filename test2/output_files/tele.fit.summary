@@ -1,14 +1,14 @@
-Fitter Status : Successful - Tue Jun 11 01:36:58 2019
+Fitter Status : Successful - Tue Jun 11 20:00:48 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : tele
 Top-level Entity Name : tele
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 719 / 49,760 ( 1 % )
-    Total combinational functions : 709 / 49,760 ( 1 % )
-    Dedicated logic registers : 66 / 49,760 ( < 1 % )
-Total registers : 66
+Total logic elements : 3,714 / 49,760 ( 7 % )
+    Total combinational functions : 3,696 / 49,760 ( 7 % )
+    Dedicated logic registers : 168 / 49,760 ( < 1 % )
+Total registers : 168
 Total pins : 23 / 360 ( 6 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
